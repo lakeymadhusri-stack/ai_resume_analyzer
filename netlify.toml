@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Forwards browser requests to Ollama Cloud (avoids CORS). Not a server: just a rewrite rule.
+[[redirects]]
+  from = "/ollama-api/*"
+  to = "https://ollama.com/:splat"
+  status = 200
+  force = true
